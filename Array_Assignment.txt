@@ -1,0 +1,430 @@
+Q1).Find Minimum and Maximum Element in an Array..?
+Ans:-
+
+public class MinMax {
+	
+	public static void main(String[] args) {
+		
+		int[] a1 = {50,30,10,40,60,20};
+		int a2;
+		
+		//Arrays.sort(a);
+		
+		for(int i=0;i<a1.length;i++)
+		{
+			for(int j=i+1;j<a1.length;j++)
+			{
+				if(a1[i] > a1[j])
+				{
+					a2 = a1[i];
+					a1[i] = a1[j];
+					a1[j] = a2;
+				}
+			}
+		}
+		
+		System.out.println("Minimum Value of an Array :"+a1[0]);
+		System.out.println("Maximum Value of an Array :"+a1[a1.length-1]);
+		
+	}
+
+}
+
+OUTPUT:-
+----------
+Minimum Value of an Array :10
+Maximum Value of an Array :60
+
+==============================================================================================================================
+
+Q2). Write a Program to Reverse an Array..?
+Ans:-
+
+public class ReverseArray {
+	
+	public static void main(String[] args) {
+		
+		int[] a = {10,20,30,40,50,60};
+		System.out.println("Original Array :");
+		
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.print(a[i]+"\t");
+		}
+		
+		System.out.println();
+		System.out.println("Reverse Array :");
+		
+		for(int i=a.length-1;i>=0;i--)
+		{
+			System.out.print(a[i]+"\t");
+		}
+	}
+
+}
+
+OUTPUT:-
+----------
+Original Array :
+10	20	30	40	50	60	
+Reverse Array :
+60	50	40	30	20	10	
+
+==============================================================================================================================
+
+Q3). Write a program to Sort the given Array..?
+Ans:-
+
+import java.util.Arrays;
+
+public class SortingArray {
+	
+	public static void main(String[] args) {
+		
+		int[] a = {20,10,-20,40,-40,-10,-30,50,-50,30};
+		
+		System.out.println("Original Array :");
+		
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.print(a[i]+"\t");
+		}
+		
+		System.out.println();
+		System.out.println();
+		
+		Arrays.sort(a);
+		
+		System.out.println("Array Sorting :");
+		
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.print(a[i]+"\t");
+		}
+	}
+
+}
+
+OUTPUT:-
+----------
+Original Array :
+20	10	-20	40	-40	-10	-30	50	-50	30	
+
+Array Sorting :
+-50	-40	-30	-20	-10	10	20	30	40	50	
+
+==============================================================================================================================
+
+Q4). Find The Occurence of an Integer in the Array..?
+Ans:-
+
+import java.util.Scanner;
+
+public class IntegerOccurence {
+	
+	public static void main(String[] args) {
+		
+		int[] a = {5,8,5,7,4,5,8,8,9,10,8,24,12,23,8,2,4,5,6,8,2,6,8};
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Value of an Integer :");
+		
+		int x=sc.nextInt();
+		sc.close();
+		
+		int occurence = 0;
+		
+		for(int i=0;i<a.length;i++)
+		{
+			if(x == a[i])
+			{
+				occurence++;
+			}
+		
+		}
+		System.out.println("Total Number of Occurence of an integer "+x+" : "+occurence);
+	}
+
+}
+
+OUTPUT:-
+----------
+Enter the Value of an Integer :
+8
+Total Number of Occurence of an integer 8 : 7
+
+==============================================================================================================================
+
+Q5). Move all Negative Elements to one side of the Array..?
+Ans:-
+
+public class NegativeArray {
+	
+	public static void main(String[] args) {
+				
+		int[] a1 = {1,2,-3,4,-6,7,-1,-2,3,-4};
+		int a2;
+		int j=0;
+		
+		System.out.println("Original Array :");
+		for(int i=0;i<a1.length;i++)
+		{
+			System.out.print(a1[i]+"\t");
+		}
+		
+		for(int i1=0;i1<a1.length;i1++)
+		{
+			if(a1[i1]>0)
+			{
+				if(i1 != j)
+				{
+					a2 = a1[i1];
+					a1[i1] = a1[j];
+					a1[j] = a2;
+				}
+				j++;
+			}
+		}
+		
+		System.out.println();
+		
+		System.out.println("Modified Array :");
+		for(int k=0;k<a1.length;k++)
+		{	
+			System.out.print(a1[k]+"\t");
+		}				
+	
+	}
+
+}
+
+OUTPUT:-
+----------
+Original Array :
+1	2	-3	4	-6	7	-1	-2	3	-4	
+Modified Array :
+1	2	4	7	3	-3	-1	-2	-6	-4	
+
+==============================================================================================================================
+
+Q6). Find Duplicates in an Array..?
+Ans:-
+
+public class ArrayDuplicates {
+	
+	public static void main(String[] args)
+	{
+		int[] a = {6,2,3,2,3,4,4,5,6,5,7};
+		
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=i+1;j<a.length;j++)
+			{
+				if(a[i] == a[j])
+				{
+					System.out.println(a[j]);
+				}
+			}
+		}
+	}
+
+}
+
+OUTPUT:-
+----------
+6
+2
+3
+4
+5
+
+==============================================================================================================================
+
+Q7). Find Fictorial of a Large Number..?
+Ans:-
+
+public class FictorialArray {
+	
+	public static void main(String[] args)
+	{
+		int[] a = {5,3,6,4,1,7,9,2,8};
+		int a1;
+		
+		for(int i=0;i<a.length;i++)
+		{
+			for(int j=i+1;j<a.length;j++)
+			{
+				if(a[i] > a[j])
+				{
+					a1 = a[i];
+					a[i] = a[j];
+					a[j] = a1;
+				}
+			}
+		}
+		System.out.println("Largest Number of an Array :"+a[a.length-1]);
+		
+		int largeNo = a[a.length-1];
+		int fact = 1;
+		
+		for(int i=1;i<=largeNo;i++)
+		{
+			fact = fact*i;
+		}
+		System.out.println("Factorial of "+largeNo+" is :"+fact);
+	}
+
+}
+
+OUTPUT:-
+----------
+Largest Number of an Array :9
+Factorial of 9 is :362880
+
+==============================================================================================================================
+
+Q8). How to find common Elements in Three Sorted Arrays..?
+Ans:-
+
+import java.util.Arrays;
+
+public class CommonElements {
+	
+	public static void main(String[] args) {
+		
+		int[] a1 = {1,2,3,4,5,6,7,8,9,10};
+		int[] a2 = {2,4,6,8,10,12,14,16,18,20};
+		int[] a3 = {3,6,9,12,15,18,21,24,27,30};
+		
+		Arrays.sort(a1);
+		Arrays.sort(a2);
+		Arrays.sort(a3);
+		
+		int i=0,j=0,k=0;
+		
+		while(i<a1.length && j<a2.length && k<a3.length)
+		{
+			if(a1[i] == a2[j] && a2[j] == a3[k])
+			{
+				System.out.println(a1[i]);
+				i++;
+				j++;
+				k++;
+			}
+			else if(a1[i] < a2[j])
+			{
+				i++;
+			}
+			else if(a2[j] < a3[k])
+			{
+				j++;
+			}
+			else
+				k++;
+		}
+	}
+
+}
+
+OUTPUT:-
+----------
+6
+
+==============================================================================================================================
+
+Q9). How to Rearrange Array in alternating Positive and Negative Number..?
+Ans:-
+
+public class AltPosNeg {
+	
+	public static void main(String[] args) {
+		
+		int[] a1={-4,-3,-2,-1,1,2,5,6};	
+		int i=-1;
+		int a2;
+		
+		System.out.println("Original Array :");
+		for(int a=0;a<a1.length;a++)
+		{
+			System.out.print(a1[a]+"\t");
+		}
+		
+		for(int j=0;j<a1.length;j++)
+		{
+			if(a1[j]<0)
+			{
+				i++;
+				a2=a1[i];
+				a1[i]=a1[j];
+				a1[j]=a2;
+			}			
+		}
+		int pos=i+1,neg=0;
+		while(pos<a1.length && neg<pos && a1[neg]<0)
+		{
+			a2=a1[neg];
+			a1[neg]=a1[pos];
+			a1[pos]=a2;
+			pos++;
+			neg+=2;
+		}
+		
+		System.out.println();
+		System.out.println();
+		
+		System.out.println("Modified Array :");
+		for(int k=0;k<a1.length;k++)
+		{	
+				System.out.print(a1[k]+"\t");
+		}
+	}
+
+}
+
+OUTPUT:
+---------
+Original Array :
+-4	-3	-2	-1	1	2	5	6	
+
+Modified Array :
+1	-3	2	-1	5	-2	6	-4	
+
+==============================================================================================================================
+
+Q10). Write a Program to find the sum and Product of all Elements of an Array..?
+Ans:-
+
+public class SumProduct {
+	
+	public static void main(String[] args) {
+		
+		int[] a = {1,2,3,4,5,6,7,8,9,10};
+		
+		int sum = 0;
+		int product = 1;
+		
+		System.out.println("Sum of the Elements of an Array :");
+		for(int i=0;i<a.length;i++)
+		{
+			sum = sum + a[i];
+			product = product * a[i];
+		}
+		System.out.println(sum);
+		
+		System.out.println();
+		
+		System.out.println("Product of the Elements of an Array :");
+		System.out.println(product);
+	}
+
+}
+
+OUTPUT:
+---------
+Sum of the Elements of an Array :
+55
+
+Product of the Elements of an Array :
+3628800
+
+==============================================================================================================================
